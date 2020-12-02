@@ -88,10 +88,12 @@ function sectionMods(s, n) {
     separator.appendChild(subTitle);
   }
 
-  let sectionNumber = document.createElement('div');
-  sectionNumber.classList.add('section-number');
-  sectionNumber.innerText = n;
-  separator.appendChild(sectionNumber);
+  // 2019 section numbers
+  // let sectionNumber = document.createElement('div');
+  // sectionNumber.classList.add('section-number');
+  // sectionNumber.innerText = n;
+  // separator.appendChild(sectionNumber);
+
   return s;
 }
 
