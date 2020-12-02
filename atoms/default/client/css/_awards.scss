@@ -1,0 +1,126 @@
+.working-report__section.awards {
+  display: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  .section-number {
+    display: none;
+  }
+  .working-report__section__inner {
+    padding-bottom: 96px;
+    padding-top: 64px;
+  }
+  @include mq(tablet) {
+    .section-header {
+      background-color: transparent;
+    }
+    .working-report__section__inner {
+      border: 0;
+      transform: none;
+      margin: -134px 0 0;
+      width: auto;
+      padding-top: 240px;
+    }
+  }
+  @include mq(desktop) {
+    .section-header h3 {
+      left: 200px;
+    }
+    .working-report__section__inner {
+      padding-top: 200px;
+      margin-top: -89px;
+    }
+  }
+  @include mq(leftCol) {
+    .section-header h3 {
+      left: 184px;
+    }
+  }
+  @include mq(wide) {
+    .section-header h3 {
+      left: 276px;
+    }
+  }
+
+  p {
+    font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Text Egyptian Web",Georgia,serif;
+    padding: 6px 18px 36px 14px;
+    background-color: #ffe500;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 200;
+    margin: 0 0 18px;
+    position: relative;
+    z-index: 10;
+    color: #062962;
+
+    strong {
+      font-weight: 700;
+    }
+    @include mq(tablet) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    @include mq(tablet) {
+      margin-left: 180px;
+      max-width: 405px;
+      padding-left: 20px;
+      padding-right: 136px;
+      margin-bottom: 42px;
+      &:before {
+        content: '';
+        display: block;
+        width: 200px;
+        height: 110px;
+        border: 1px solid #506991;
+        background-color: rgba(#fff,0.5);
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -18px;
+        left: -190px;
+      }
+      &:nth-child(1):before {
+        background-image: url(https://uploads.guim.co.uk/2019/10/02/wakeley-award@2x.png);
+      }
+      &:nth-child(2):before {
+        background-image: url(https://uploads.guim.co.uk/2019/12/06/campaign-media@2x.png);
+      }
+      &:nth-child(3):before {
+        background-image: url(https://uploads.guim.co.uk/2019/12/06/london-press-club@2x.png);
+      }
+      &:nth-child(4):before {
+        background-image: url(https://uploads.guim.co.uk/2019/12/06/design-week@2x.png);
+      }
+      &:nth-child(5):before {
+        background-image: url(https://uploads.guim.co.uk/2019/12/06/british-media-awards@2x.png);
+      }
+      &:nth-child(6):before {
+        background-image: url(https://uploads.guim.co.uk/2019/12/06/the-press-awards@2x.png);
+      }
+      &:nth-child(7):before {
+        background-image: url(https://uploads.guim.co.uk/2019/10/02/the-webby-awards@2x.png);
+      }
+      &:nth-child(8):before {
+        background-image: url(https://uploads.guim.co.uk/2019/10/02/wan-ifra@2x.png);
+      }
+    }
+    @include mq(desktop) {
+      width: 357px;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(-30px);
+      padding-right: 100px;
+    }
+    @include mq(leftCol) {
+      width: 357px;
+      transform: translateX(62px);
+    }
+    @include mq(wide) {
+      transform: translateX(80px);
+    }
+
+
+  }
+}
