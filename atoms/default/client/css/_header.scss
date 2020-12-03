@@ -22,22 +22,22 @@
 
   }
 
-  &__inner {
-    // @include mq(desktop) {
-    //   width: 980px;
-    //   margin: auto;
-    //   position: relative;
-    //   height: 620px;
-    // }
-    // @include mq(leftCol) {
-    //   width: 1140px;
-    //   height: 800px;
-    // }
-    // @include mq(wide) {
-    //   width: 1300px;
-    //   height: 880px;
-    // }
-  }
+  // &__inner {
+  //   @include mq(desktop) {
+  //     width: 980px;
+  //     margin: auto;
+  //     position: relative;
+  //     height: 620px;
+  //   }
+  //   @include mq(leftCol) {
+  //     width: 1140px;
+  //     height: 800px;
+  //   }
+  //   @include mq(wide) {
+  //     width: 1300px;
+  //     height: 880px;
+  //   }
+  // }
 
   &__title {
     background-color: #052962;
@@ -94,21 +94,6 @@
       margin-top: -0.08em;
     }
 
-    // @include mq(desktop) {
-    //   font-size: 66px;
-    //   line-height: 60px;
-    //   top: 80px;
-    //   width: 650px;
-    //   left: 10px;
-    //   margin: 0;
-    // }
-    // @include mq(leftCol) {
-    //   padding: 12px;
-    //   width: 910px;
-    //   top: 20px;
-    // }
-
-
   }
 
   &__subtitle {
@@ -145,23 +130,7 @@
         margin-left: 190px;
         width: 524px;
       }
-      // @include mq(desktop) {
-      //   position: absolute;
-      //   bottom: 0;
-      //   left: 232px;
-      //   width: 440px;
-      //   padding-right: 120px;
-      // }
-      // @include mq(leftCol) {
-      //   left: 240px;
-      //   padding-bottom: 100px;
-      //   width: 480px;
-      //   padding-right: 260px;
-      // }
-      // @include mq(wide) {
-      //   padding-bottom: 140px;
-      //   padding-right: 280px;
-      // }
+
       p {
         font-size: 20px;
         line-height: 23px;
@@ -179,14 +148,11 @@
 
       &__secondary {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         position: relative;
         margin-top: 40px;
 
-        // @include mq(414px) {
-          flex-direction: row;
-          justify-content: space-between;
-        // }
         .compact {
           display: none;
           @include mq(340px) {
