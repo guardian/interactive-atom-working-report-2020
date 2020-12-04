@@ -1,5 +1,4 @@
 .working-report__section {
-  margin-bottom: 24px;
   .section-header {
     margin-bottom: 46px;
     position: relative;
@@ -25,14 +24,15 @@
       }
 
       @include mq(tablet) {
-        padding-top: 0;
-        font-size: 120px;
+        padding-top: 1px;
+        font-size: 112px;
         line-height: 0.9;
         padding-bottom: 68px;
-        margin-right: 60px;
+        margin-right: 80px;
       }
       @include mq(desktop) {
-        margin-right: 200px;
+        padding-top: 4px;
+        margin-right: 180px;
         font-size: 132px;
         line-height: 0.85;
       }
@@ -65,15 +65,33 @@
         left: 0;
       }
       @include mq(tablet) {
-        width: 340px;
+        width: 380px;
+        position: relative;
         font-size: 22px;
         line-height: 24px;
-      }
-      @include mq(desktop) {
-        margin-left: 160px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 20px;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 26px;
+          left: -21px;
+          bottom: 0;
+          background-color: #dcdcdc;
+          width: 1px;
+          height: 100%;
+        }
       }
       @include mq(leftCol) {
-        margin-left: 190px;
+        margin-left: 150px;
+        &:before {
+          display: none;
+        }
+      }
+      @include mq(wide) {
+        margin-left: 230px;
       }
     }
   }

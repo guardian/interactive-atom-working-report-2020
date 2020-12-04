@@ -52,11 +52,11 @@
     padding: 4px 8px;
     @include mq(tablet) {
       left: 0;
-      right: 60px;
+      right: 80px;
     }
     @include mq(desktop) {
       padding: 4px 10px;
-      right: 160px;
+      right: 180px;
     }
     @include mq(leftCol) {
       right: auto;
