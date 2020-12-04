@@ -9,11 +9,12 @@
 .working-report__nav {
   display: none;
 
-  @include mq(tablet) {
-    @media (hover: hover) and (pointer: fine) {
-      display: block;
-    }
-  }
+  // temporarily disable nav
+  // @include mq(tablet) {
+  //   @media (hover: hover) and (pointer: fine) {
+  //     display: block;
+  //   }
+  // }
 
 
   &__inner {
