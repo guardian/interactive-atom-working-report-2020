@@ -1,4 +1,3 @@
-console.log("THIS IS NAV.JS")
 createNav();
 
 function createNav() {
@@ -8,10 +7,6 @@ function createNav() {
   let navInner = document.createElement('div');
   navInner.classList.add('working-report__nav__inner');
   nav.appendChild(navInner);
-
-  let navHoverArea = document.createElement('div');
-  navHoverArea.classList.add('working-report__nav__inner__hover-area');
-  navInner.appendChild(navHoverArea);
 
   let wrapper = document.querySelector('.working-report__wrapper');
   let sections = wrapper.querySelectorAll('.working-report__section');
@@ -29,7 +24,8 @@ function createNav() {
   overlay.classList.add('overlay');
   nav.appendChild(overlay);
 
-  wrapper.appendChild(nav);
+  const insertReference = wrapper.querySelector('figure').nextElementSibling;
+  wrapper.insertBefore(nav, insertReference);
 
   setNavEvents()
 }
