@@ -98,7 +98,7 @@ function sectionMods(s, n) {
 }
 
 function secondaryArticleJS() {
-  ['nav'].forEach((s) => {
+  ['nav', 'illustration'].forEach((s) => {
     var el = document.createElement('script');
     el.src = '<%= atomPath %>/' + s + '.js';
     document.body.appendChild(el);
