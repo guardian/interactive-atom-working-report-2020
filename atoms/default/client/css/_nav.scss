@@ -24,6 +24,15 @@
 
     z-index: 1082;
     padding: 40px 20px;
+
+    &:before {
+      content: 'Jump to';
+      font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      font-size: 14px;
+      text-align: right;
+      display: none;
+    }
+
     @include mq(leftCol) {
       padding-left: 60px;
     }
@@ -32,6 +41,9 @@
         opacity: 0.6;
         transition: opacity 360ms;
       }
+    }
+    [data-state='initial'] &,
+    &:hover {
       .current {
         margin-top: 0;
         margin-bottom: 0;
@@ -40,6 +52,12 @@
         opacity: 1;
         transform: translateX(0);
         visibility: visible;
+      }
+    }
+
+    [data-state='initial'] &:hover {
+      & + .overlay {
+        opacity: 0;
       }
     }
 
@@ -52,17 +70,32 @@
     color: #f6f6f6;
     transition: all 300ms ease-in-out;
 
+
     &:hover {
       .label {
         color: #FFE500;
       }
     }
 
+    [data-state='initial'] & {
+      color: #041f4a;
+      .marker {
+        opacity: 1;
+        background-color: currentColor;
+      }
+      &:hover {
+        .label {
+          color: #041f04;
+        }
+        // .marker {
+        //   color: #ffe500;
+        // }
+      }
+    }
+
     .label {
       // display: none;
       display: inline-block;
-      font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      font-size: 14px;
       padding: 0;
       margin: -1px 0 0;
       font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Text Egyptian Web",Georgia,serif;

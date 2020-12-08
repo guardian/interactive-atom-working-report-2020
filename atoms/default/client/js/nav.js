@@ -3,6 +3,7 @@ createNav();
 function createNav() {
   let nav = document.createElement('div');
   nav.classList.add('working-report__nav');
+  nav.dataset.state = 'initial';
 
   let navInner = document.createElement('div');
   navInner.classList.add('working-report__nav__inner');
@@ -32,6 +33,8 @@ function createNav() {
 
 function setNavEvents() {
 
+  const navRoot = document.querySelector('.working-report__nav');
+
   // Highlight current section on scroll
   window.addEventListener('scroll', function () {
     let s = getCurrentSection(0);
@@ -39,13 +42,31 @@ function setNavEvents() {
 
     // highlight in nav
     if (s) {
-      let navSection = document.querySelector('[data-section-class="' + s.dataset.section + '"]');
+      let navSection = navRoot.querySelector('[data-section-class="' + s.dataset.section + '"]');
       if (!navSection.classList.contains('current')) {
-        let prevSection = document.querySelector('.working-report__nav__section.current');
-        if (prevSection) {
-          prevSection.classList.remove('current');
-        }
+        wipeCurrentPrevNextClasses();
         navSection.classList.add('current');
+
+        if (navSection.previousElementSibling) {
+          navSection.previousElementSibling.classList.add('is-prev');
+        }
+        if (navSection.nextElementSibling) {
+          navSection.nextElementSibling.classList.add('is-next');
+        }
+      }
+    }
+
+    if (window.scrollY > 180) {
+      if (navRoot.dataset.state != 'compact') {
+        navRoot.dataset.state = 'compact';
+      }
+    } else {
+      wipeCurrentPrevNextClasses();
+      let firstSection = navRoot.querySelector('[data-section-class]');
+      firstSection.classList.add('is-next');
+
+      if (navRoot.dataset.state != 'initial') {
+        navRoot.dataset.state = 'initial';
       }
     }
 
@@ -75,6 +96,15 @@ function setNavEvents() {
     })
   });
 
+}
+
+function wipeCurrentPrevNextClasses() {
+  let willRemoveClasses = document.querySelectorAll('.working-report__nav__section.current, .working-report__nav__section.is-prev, .working-report__nav__section.is-next');
+  willRemoveClasses.forEach((el) => {
+    el.classList.remove('current');
+    el.classList.remove('is-prev');
+    el.classList.remove('is-next');
+  });
 }
 
 function getCurrentSection(offset) {
