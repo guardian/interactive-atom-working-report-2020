@@ -20,6 +20,17 @@ figure.element-image {
     }
   }
 
+  // Inverted caption for photos at the end of a section
+  &:last-child {
+    display: flex;
+    flex-direction: column-reverse;
+    figcaption {
+      &:before {
+        transform: rotate(180deg) translateY(-1px);
+      }
+    }
+  }
+
   &.element--immersive {
     margin: 0;
   }
