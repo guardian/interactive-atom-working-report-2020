@@ -1,5 +1,8 @@
+body {
+  background-color: #FAF4E8;
+}
 .working-report__wrapper {
-  background-color: #fff;
+  background-color: #FAF4E8;
   @include mq(tablet) {
     width: 740px;
     margin: 0 auto;
