@@ -4,9 +4,14 @@ createNav();
 function createNav() {
   let nav = document.createElement('div');
   nav.classList.add('working-report__nav');
+
   let navInner = document.createElement('div');
   navInner.classList.add('working-report__nav__inner');
   nav.appendChild(navInner);
+
+  let navHoverArea = document.createElement('div');
+  navHoverArea.classList.add('working-report__nav__inner__hover-area');
+  navInner.appendChild(navHoverArea);
 
   let wrapper = document.querySelector('.working-report__wrapper');
   let sections = wrapper.querySelectorAll('.working-report__section');
