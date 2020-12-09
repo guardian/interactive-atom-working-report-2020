@@ -28,9 +28,26 @@
     &:before {
       content: 'Jump to';
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       text-align: right;
-      display: none;
+      position: absolute;
+      top: 12px;
+      right: 30px;
+      color: inherit;
+      color: #fff;
+      opacity: 0.8;
+      opacity: 0;
+      transform: translateX(60px);
+      visibility: hidden;
+
+      transition: transform 400ms cubic-bezier(.32,.03,.19,1), opacity 250ms cubic-bezier(.32,.03,.19,1), visibility 250ms;
+      transition-delay: 0ms;
+
+      @include mq(wide) {
+        [data-state='initial'] & {
+          color: #041f04;
+        }
+      }
     }
 
     @include mq(leftCol) {
@@ -42,24 +59,41 @@
         transition: opacity 360ms;
       }
     }
-    [data-state='initial'] &,
+
     &:hover {
       .current {
         margin-top: 0;
         margin-bottom: 0;
       }
-      .label {
+      .label,
+      &:before {
         opacity: 1;
         transform: translateX(0);
         visibility: visible;
       }
     }
 
-    [data-state='initial'] &:hover {
-      & + .overlay {
-        opacity: 0;
+    @include mq(wide) {
+      [data-state='initial'] & {
+        .current {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .label,
+        &:before {
+          opacity: 1;
+          transform: translateX(0);
+          visibility: visible;
+        }
       }
+      [data-state='initial'] &:hover {
+        & + .overlay {
+          opacity: 0;
+        }
+      }
+
     }
+
 
   }
   &__section {
@@ -77,20 +111,19 @@
       }
     }
 
-    [data-state='initial'] & {
-      color: #041f4a;
-      .marker {
-        opacity: 1;
-        background-color: currentColor;
-        color: #041f04;
-      }
-      &:hover {
-        .label {
+    @include mq(wide) {
+      [data-state='initial'] & {
+        color: #041f4a;
+        .marker {
+          opacity: 1;
+          background-color: currentColor;
           color: #041f04;
         }
-        // .marker {
-        //   color: #ffe500;
-        // }
+        &:hover {
+          .label {
+            color: #041f04;
+          }
+        }
       }
     }
 
@@ -115,7 +148,7 @@
     @for $i from 1 through 12 {
       &:nth-child(#{$i}) {
         .label {
-          transition-delay: (#{$i*25}ms);
+          transition-delay: (#{($i+1)*25}ms);
         }
       }
     }
