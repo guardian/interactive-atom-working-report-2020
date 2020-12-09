@@ -1,0 +1,40 @@
+.working-report__nav {
+  &[data-state='initial'] {
+
+  }
+
+  &[data-state='compact'] {
+
+  }
+
+  &__inner {
+    &:before {
+
+    }
+  }
+
+  &__section {
+    &.current {
+
+    }
+    &.is-next {
+
+    }
+    &.is-prev {
+
+    }
+
+    .label {
+
+    }
+
+    .marker {
+
+    }
+
+  }
+
+  .overlay {
+
+  }
+}
