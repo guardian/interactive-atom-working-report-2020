@@ -1,40 +1,109 @@
-.working-report__nav {
-  &[data-state='initial'] {
+@include mq($until:desktop) {
+  .working-report__nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200 !important;
 
-  }
+    &[data-state='initial'] {
+      .working-report__nav__inner {
+        margin: 24px 0;
+      }
+    }
 
-  &[data-state='compact'] {
+    &[data-state='compact'] {
+      .working-report__nav__section {
+        display: none;
+        &.current {
+          display: block;
+          padding-right: 80px;
+          height: 1.5em;
+          overflow: hidden;
+        }
+        &.is-prev,
+        &.is-next {
+          display: block;
+          position: absolute;
+          top: 0;
+          .label {
+            display: none;
+          }
+          .marker {
+            cursor: pointer;
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 7px;
+              left: 7px;
+              width: 24px;
+              height: 24px;
+              border: 1px solid rgba(#fff,0.5);
+              border-radius: 100%;
+              background-image: url(https://uploads.guim.co.uk/2020/12/09/arrow.svg);
+            }
+            &:hover:before {
+              border-color: #fff;
+            }
+          }
+        }
+        &.is-prev {
+          right: 40px;
+        }
+        &.is-next {
+          right: 0;
+          .marker {
+            transform: rotate(180deg);
+          }
+        }
+      }
 
-  }
 
-  &__inner {
-    &:before {
+      .working-report__nav__inner {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &__inner {
+      background-color: #041F4A;
+      color: #fff;
+      padding: 8px 10px 18px;
+      &:before {
+        display: block;
+        margin-bottom: 4px;
+      }
+    }
+
+    &__section {
+      &.current {
+
+      }
+      &.is-next {
+
+      }
+      &.is-prev {
+
+      }
+
+      .label {
+
+      }
+
+      .marker {
+
+      }
+
+    }
+
+    .overlay {
 
     }
   }
 
-  &__section {
-    &.current {
-
-    }
-    &.is-next {
-
-    }
-    &.is-prev {
-
-    }
-
-    .label {
-
-    }
-
-    .marker {
-
-    }
-
-  }
-
-  .overlay {
-
-  }
 }

@@ -2,6 +2,14 @@ body {
   background-color: #FAF4E8;
 }
 .working-report__wrapper {
+  position: relative;
+  z-index: 10;
+
+  & > figure,
+  & > div {
+    z-index: 11;
+  }
+
   background-color: #FAF4E8;
   @include mq(tablet) {
     width: 740px;

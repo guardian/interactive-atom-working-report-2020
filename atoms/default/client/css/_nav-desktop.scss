@@ -1,6 +1,6 @@
 .working-report__nav {
-  @include mq(tablet) {
-    @media (hover: hover) and (pointer: fine) {
+  @include mq(desktop) {
+    // @media (hover: hover) and (pointer: fine) {
       &__inner {
         position: fixed;
         top: 50%;
@@ -164,6 +164,6 @@
         pointer-events: none;
         transition: opacity 1000ms; // animation OUT
       }
-    }
+    // }
   }
 }
