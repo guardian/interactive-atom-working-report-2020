@@ -25,7 +25,11 @@ function createNav() {
   overlay.classList.add('overlay');
   nav.appendChild(overlay);
 
-  const insertReference = wrapper.querySelector('figure').nextElementSibling;
+  let toggleMobileNavEl = document.createElement('div');
+  toggleMobileNavEl.classList.add('toggle-mobile-nav');
+  navInner.appendChild(toggleMobileNavEl);
+
+  const insertReference = wrapper.querySelector('.working-report__section');
   wrapper.insertBefore(nav, insertReference);
 
   setNavEvents()
@@ -52,6 +56,11 @@ function setNavEvents() {
     })
   });
 
+  // Mobile nav toggle
+  let navToggleEl = navRoot.querySelector('.toggle-mobile-nav');
+  navToggleEl.addEventListener('click', () => {
+    navRoot.classList.toggle('expanded');
+  })
 }
 
 function highlightCurrentSection(navRoot) {
