@@ -13,6 +13,11 @@
     .label {
       font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Text Egyptian Web",Georgia,serif;
       font-size: 18px;
+      @include mq($until: desktop) {
+        line-height: 18px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
       font-weight: 600;
     }
   }

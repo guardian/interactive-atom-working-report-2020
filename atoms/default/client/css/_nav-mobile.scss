@@ -41,7 +41,7 @@
         &.current {
           display: block;
           padding-right: 80px;
-          height: 1.5em;
+          height: 1.8em;
           overflow: hidden;
           pointer-events: none;
         }
@@ -98,6 +98,64 @@
         cursor: pointer;
       }
 
+      &.expanded {
+        .toggle-mobile-nav {
+          // background-color: tan;
+          // opacity: 0.2;
+          left: 0;
+          right: 0;
+          height: 40px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            right: 7px;
+            width: 24px;
+            height: 24px;
+            // border: 1px solid rgba(#fff,0.5);
+            border: 1px solid rgba(#052962,0.5);
+            border-radius: 100%;
+            background-image: url(https://uploads.guim.co.uk/2020/12/10/cross.svg);
+          }
+          &:hover:before {
+            border-color: #052962;
+          }
+      }
+        .working-report__nav__inner:before {
+          display: block;
+          color: #506991;
+          padding-top: 5px;
+        }
+        .working-report__nav__section {
+          display: block;
+          padding-right: 40px;
+          height: auto;
+          &.current {
+            padding-right: 40px;
+            height: auto;
+            pointer-events: default;
+          }
+          &.is-prev,
+          &.is-next {
+            position: static;
+            .label {
+              display: block;
+            }
+            .marker {
+              display: none;
+            }
+          }
+          &.is-prev {
+            right: 40px;
+          }
+          &.is-next {
+            right: 0;
+            .marker {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
     }
 
   }
