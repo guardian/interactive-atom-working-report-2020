@@ -1,5 +1,10 @@
 .working-report__nav {
   @include mq(desktop) {
+    height: 20px;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    background-color: tomato;
     // @media (hover: hover) and (pointer: fine) {
       &__inner {
         position: fixed;
