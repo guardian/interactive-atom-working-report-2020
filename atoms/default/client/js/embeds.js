@@ -4,8 +4,14 @@ function setupEmbeds() {
   let wr = document.querySelector('.working-report__wrapper');
   let pAll = wr.querySelectorAll('p');
   pAll.forEach((pEl) => {
-    if (pEl.innerText.indexOf('Our numbers: ') >= 0) {
+
+    const text = pEl.innerText.toLowerCase();
+
+    if (text.indexOf('our numbers: ') >= 0) {
       makeNumberEl(pEl);
+    }
+    if (text.indexOf('from our supporters: ') >= 0) {
+      makeSupporterQuoteEl(pEl);
     }
   })
 }
@@ -13,16 +19,33 @@ function setupEmbeds() {
 function makeNumberEl(el) {
   el.classList.add('embed');
   el.classList.add('our-numbers');
+  checkFloat(el);
 
   if (el.innerText.indexOf('900,000') >= 0) {
     el.classList.add('long-number');
   }
+}
 
-  // if a number has a ** it should be always fullwidth
-  if (el.innerText.indexOf('**') >= 0) {
-    el.innerHTML = el.innerHTML.split('**').join('');
-  } else {
-    el.classList.add('can-float');
-  }
+function makeSupporterQuoteEl(el) {
+  el.classList.add('embed');
+  el.classList.add('supporter-quote');
+  checkFloat(el);
+
+  el.innerHTML = el.innerHTML.split('From our supporters: ').join('');
+  el.innerHTML = `<div class='s'>From our supporters</div>${el.innerHTML}`;
+
+  let name = el.querySelector('strong');
+  let loc = el.querySelector('em');
+
+  name.innerHTML = name.innerHTML.split(',').join('');
 
 }
+
+function checkFloat(el) {
+  // ** means it can float
+  if (el.innerText.indexOf('**') >= 0) {
+    el.innerHTML = el.innerHTML.split('**').join('');
+    el.classList.add('can-float');
+  }
+}
+

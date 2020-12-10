@@ -1,16 +1,112 @@
-.embed.our-numbers {
+p.embed {
   padding: 22px 10px 24px;
-  color: #c70000;
-  border-bottom: 1px solid #C70000;
-  background-color: #FFF4F2;
   position: relative;
-
-  font-size: 20px;
-  line-height: 24px;
   font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
-  font-weight: 700;
+  background-color: #FFF4F2;
+
+  &.our-numbers {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #c70000;
+    border-bottom: 1px solid #C70000;
+    &:before,
+    &:after {
+      border-top: 1px solid #C70000;
+      border-bottom: 1px solid #C70000;
+    }
+    strong {
+      display: block;
+      font-size: 82px;
+      line-height: 78px;
+      background-color: #FFF4F2;
+      margin-top: -24px;
+      padding-top: 24px;
+      padding-bottom: 8px;
+      position: relative;
+      z-index: 1;
+      font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+
+      &:before {
+        font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+        position: absolute;
+        top: 0;
+        content: 'Our numbers';
+        background-image: url(https://uploads.guim.co.uk/2020/12/10/numbers.svg);
+        background-position: 3px 0;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        font-size: 16px;
+        line-height: 24px;
+        display: block;
+
+        font-weight: 400;
+        -webkit-font-smoothing: subpixel-antialiased;
+
+      }
+    }
+
+    &.long-number strong {
+      font-size: 74px;
+    }
+  }
+
+  &.supporter-quote {
+    color: #041F4A;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 200;
+    -webkit-font-smoothing: subpixel-antialiased;
+    border-bottom: 1px solid #EACCA0;
+
+    @include mq(tablet) {
+      font-size: 24px;
+      line-height: 32px;
+        padding-right: 80px;
+    }
+    &:before,
+    &:after {
+      border-top: 1px solid #EACCA0;
+      border-bottom: 1px solid #EACCA0;
+    }
+    .s {
+      margin-top: -4px;
+      margin-bottom: 6px;
+      font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      font-style: normal;
+      background-image: url(https://uploads.guim.co.uk/2020/12/10/supporters.svg);
+      background-position: 3px 5px;
+      background-repeat: no-repeat;
+      padding-left: 29px;
+      font-size: 16px;
+      line-height: 24px;
+      display: block;
+
+      font-weight: 400;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    strong,
+    em {
+      display: block;
+      color: #E05E00;
+      -webkit-font-smoothing: antialiased;
+      line-height: 28px;
+    }
+    strong {
+      margin-top: 0.65em;
+      font-style: normal;
+      font-weight: 700;
+    }
+    em {
+      font-style: italic;
+      font-weight: 200;
+    }
+  }
 
   @include mq(tablet) {
+    margin: 18px 0 24px -10px;
     &.can-float {
       float: left;
       clear: both;
@@ -39,49 +135,12 @@
     left: 0;
     right: 0;
     height: 3px;
-    border-top: 1px solid #C70000;
-    border-bottom: 1px solid #C70000;
   }
   &:before {
     top: 0;
   }
   &:after {
     top: 8px;
-  }
-
-  strong {
-    display: block;
-    font-size: 82px;
-    line-height: 78px;
-    background-color: #FFF4F2;
-    margin-top: -24px;
-    padding-top: 24px;
-    padding-bottom: 8px;
-    position: relative;
-    z-index: 1;
-    font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
-
-    &:before {
-      font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-      position: absolute;
-      top: 0;
-      content: 'Our numbers';
-      background-image: url(https://uploads.guim.co.uk/2020/12/10/numbers.svg);
-      background-position: 3px 0;
-      background-repeat: no-repeat;
-      padding-left: 30px;
-      font-size: 16px;
-      line-height: 24px;
-      display: block;
-
-      font-weight: 400;
-      -webkit-font-smoothing: subpixel-antialiased;
-
-    }
-  }
-
-  &.long-number strong {
-    font-size: 74px;
   }
 
 }
