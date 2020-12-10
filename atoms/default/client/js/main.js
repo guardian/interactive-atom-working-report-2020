@@ -1,7 +1,7 @@
 
 
 // if this sentence is present, then the page has loaded
-const keyStentence = 'This year, alongside its core functions, the archive team has begun three new projects to engage';
+const keyStentence = 'Activities that would normally require a physical presence in our offices or overseas travel have been adapted to ensure participation is still possible and the charity can continue to make a meaningful impact';
 
 
 function checkExists(startAtomFunction) {

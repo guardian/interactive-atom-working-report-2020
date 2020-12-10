@@ -15,6 +15,17 @@
       font-size: 17px;
       line-height: 24px;
       border-left: 1px solid #dcdcdc;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -50px;
+        left: -1px;
+        width: 1px;
+        background-color: #dcdcdc;
+        height: 50px;
+      }
     }
     @include mq(leftCol) {
       padding-left: 10px;
