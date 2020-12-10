@@ -11,18 +11,24 @@
   font-weight: 700;
 
   @include mq(tablet) {
-    float: left;
-    clear: both;
-    width: 300px;
-    margin-right: 20px;
-    margin-top: 6px;
-    margin-bottom: 8px;
+    &.can-float {
+      float: left;
+      clear: both;
+      width: 300px;
+      margin-right: 20px;
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
   }
   @include mq(leftCol) {
-    margin-left: -170px;
+    &.can-float {
+      margin-left: -170px;
+    }
   }
   @include mq(wide) {
-    margin-left: -250px;
+    &.can-float {
+      margin-left: -250px;
+    }
   }
 
   &:before,
@@ -73,4 +79,9 @@
 
     }
   }
+
+  &.long-number strong {
+    font-size: 74px;
+  }
+
 }

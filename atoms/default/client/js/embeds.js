@@ -13,4 +13,16 @@ function setupEmbeds() {
 function makeNumberEl(el) {
   el.classList.add('embed');
   el.classList.add('our-numbers');
+
+  if (el.innerText.indexOf('900,000')) {
+    el.classList.add('long-number');
+  }
+
+  // if a number has a ** it should be always fullwidth
+  if (el.innerText.indexOf('**') >= 0) {
+    el.innerHTML = el.innerHTML.split('**').join('');
+  } else {
+    el.classList.add('can-float');
+  }
+
 }
