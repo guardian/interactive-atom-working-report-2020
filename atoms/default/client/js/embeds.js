@@ -14,7 +14,7 @@ function makeNumberEl(el) {
   el.classList.add('embed');
   el.classList.add('our-numbers');
 
-  if (el.innerText.indexOf('900,000')) {
+  if (el.innerText.indexOf('900,000') >= 0) {
     el.classList.add('long-number');
   }
 
