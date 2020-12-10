@@ -8,15 +8,13 @@
     padding: 0;
 }
 
-// - DONE
 @import "base";
 @import "header";
 @import "section-headers";
-@import "section-inner"; // TO-DO
-
-// - TO-DONE
-@import "images"; // TO-DO: showcase size?
+@import "section-inner";
+@import "images";
 // @import "awards"; // TO-DO
 @import "fix-footer";
 @import "nav";
 @import "print-fixes";
+@import "embeds";

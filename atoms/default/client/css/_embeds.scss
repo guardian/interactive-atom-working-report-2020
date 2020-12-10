@@ -1,0 +1,76 @@
+.embed.our-numbers {
+  padding: 22px 10px 24px;
+  color: #c70000;
+  border-bottom: 1px solid #C70000;
+  background-color: #FFF4F2;
+  position: relative;
+
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+  font-weight: 700;
+
+  @include mq(tablet) {
+    float: left;
+    clear: both;
+    width: 300px;
+    margin-right: 20px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+  }
+  @include mq(leftCol) {
+    margin-left: -170px;
+  }
+  @include mq(wide) {
+    margin-left: -250px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-top: 1px solid #C70000;
+    border-bottom: 1px solid #C70000;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    top: 8px;
+  }
+
+  strong {
+    display: block;
+    font-size: 82px;
+    line-height: 78px;
+    background-color: #FFF4F2;
+    margin-top: -24px;
+    padding-top: 24px;
+    padding-bottom: 8px;
+    position: relative;
+    z-index: 1;
+    font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+
+    &:before {
+      font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+      position: absolute;
+      top: 0;
+      content: 'Our numbers';
+      background-image: url(https://uploads.guim.co.uk/2020/12/10/numbers.svg);
+      background-position: 3px 0;
+      background-repeat: no-repeat;
+      padding-left: 30px;
+      font-size: 16px;
+      line-height: 24px;
+      display: block;
+
+      font-weight: 400;
+      -webkit-font-smoothing: subpixel-antialiased;
+
+    }
+  }
+}
