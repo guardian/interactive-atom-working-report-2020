@@ -47,7 +47,7 @@ function setNavEvents() {
     s.addEventListener('click', function () {
       let sClass = s.dataset.sectionClass;
       let sWrapper = document.querySelector('.working-report__section.' + sClass);
-      let sWrapperTop = sWrapper.offsetTop - 36;
+      let sWrapperTop = sWrapper.offsetTop + 24;
       scrollTo(sWrapperTop);
     })
   });
@@ -75,17 +75,11 @@ function highlightCurrentSection(navRoot) {
   }
 
   if (window.scrollY > 180) {
-    if (navRoot.dataset.state != 'compact') {
-      navRoot.dataset.state = 'compact';
-    }
   } else {
     wipeCurrentPrevNextClasses();
     let firstSection = navRoot.querySelector('[data-section-class]');
     firstSection.classList.add('is-next');
 
-    if (navRoot.dataset.state != 'initial') {
-      navRoot.dataset.state = 'initial';
-    }
   }
 
   // highlight in content
@@ -104,7 +98,16 @@ function setNavState(navRoot) {
   const navTop = navRoot.getBoundingClientRect().top;
   const navHeight = navRoot.offsetHeight;
   const triggerY = navTop + navHeight;
-  console.log(triggerY);
+
+  if (triggerY < 0) {
+    if (navRoot.dataset.state != 'compact') {
+      navRoot.dataset.state = 'compact';
+    }
+  } else {
+    if (navRoot.dataset.state != 'initial') {
+      navRoot.dataset.state = 'initial';
+    }
+  }
 }
 
 function wipeCurrentPrevNextClasses() {

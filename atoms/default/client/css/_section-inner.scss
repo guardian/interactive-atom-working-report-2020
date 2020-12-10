@@ -2,7 +2,7 @@
 
   &__inner {
 
-    padding: 12px 10px 24px;
+    padding: 12px 10px 0;
     font-size: 17px;
     line-height: 24px;
     max-width: 580px;
@@ -15,9 +15,6 @@
       font-size: 17px;
       line-height: 24px;
       border-left: 1px solid #dcdcdc;
-    }
-    @include mq(desktop) {
-      padding-bottom: 32px;
     }
     @include mq(leftCol) {
       padding-left: 10px;
