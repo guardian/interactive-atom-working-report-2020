@@ -49,6 +49,7 @@ function setNavEvents() {
   let navSections = document.querySelectorAll('.working-report__nav__section');
   navSections.forEach(function (s) {
     s.addEventListener('click', function () {
+      navRoot.classList.remove('expanded');
       let sClass = s.dataset.sectionClass;
       let sWrapper = document.querySelector('.working-report__section.' + sClass);
       let sWrapperTop = sWrapper.offsetTop + 24;
