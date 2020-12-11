@@ -1,5 +1,7 @@
 body {
-  background-color: #FAF4E8;
+  // background-color: #FAF4E8;
+  // background-color: tomato;
+  background-color: #FFF7E5;
   -webkit-font-smoothing: antialiased;
 }
 .working-report__wrapper {
@@ -11,7 +13,8 @@ body {
     z-index: 11;
   }
 
-  background-color: #FAF4E8;
+  // background-color: #FAF4E8;
+  background-color: #FFF7E5;
   @include mq(tablet) {
     width: 740px;
     margin: 0 auto;

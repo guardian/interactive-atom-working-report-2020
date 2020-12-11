@@ -71,11 +71,11 @@ figure.element-image {
 
   .element-atom + &,
   .element-atom + script + & {
-    border-bottom: 1px solid #506991;
+    // border-bottom: 1px solid #506991;
 
     .element-image__credit {
       bottom: -1px;
-      border-bottom: 1px solid #001;
+      // border-bottom: 1px solid #001;
     }
   }
 

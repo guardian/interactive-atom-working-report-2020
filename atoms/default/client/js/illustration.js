@@ -14,8 +14,8 @@ function fixLoResImage() {
 function tagIllustrations() {
   let allImages = document.querySelectorAll('.element-image');
   let illustrationIds = [
-    '8ad4f4bcb7e68e6c031a7accaf7a1169b68a0af1', 'e3d3d261d65a8134bf86e6e27022398b79575d91',
-    'e029577de361155527ef7008e1e4b66b64702340', '069ffeefc7b4b5c0da3a6f0f9b93b39468d76283', 'bcdb5a042e6a6bdb5b7e98af2f8ee999b0c62a2e', 'ed9ad00962d5dc73a53ea7db08070782cdc96279', 'f27f1c486db61feb5799cbfef29ecfcee7e07f47', '3b4b6f1725fe7004fe68c0e30fa1562ec1177bba'];
+    '89f23377c588def5c929386c1d21dd9a26151ea8', 'e7685488233832097fff30667cef232a293e6583',
+    'f772a4c2715e003c9675bd2c7d686d803767e397', '7fa80a94c5cdedaff47b2b399d17a9624c52e775', 'e046d4802ca16d9df018f8b935151f0726890cab', 'b844cab76b0d2b84670a6e68f72c8609c539be35', 'c8898c5ad956ec61f290d3acc14da7985d3b2d7c', 'b141ecc9f621b93e8ee9d1ed3fad3e16ba2a64a7'];
 
   allImages.forEach(function (i) {
     if (illustrationIds.indexOf(i.dataset.mediaId) >= 0) {
