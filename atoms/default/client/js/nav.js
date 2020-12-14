@@ -52,7 +52,8 @@ function setNavEvents() {
       navRoot.classList.remove('expanded');
       let sClass = s.dataset.sectionClass;
       let sWrapper = document.querySelector('.working-report__section.' + sClass);
-      let sWrapperTop = sWrapper.offsetTop;
+      let sWrapperTop = sWrapper.offsetTop + 20;
+      console.log('will scroll to', sWrapperTop);
       scrollTo(sWrapperTop);
     })
   });
@@ -159,8 +160,14 @@ function scrollTo(to) {
 
   const animateScroll = function () {
     currentTime += increment;
-    const val = Math.easeInOutQuad(currentTime, start, change, duration);
-    window.scrollTo(0, val);
+    if (duration - currentTime < increment) {
+      // last chance
+      window.scrollTo(0, to);
+    } else {
+      const val = Math.easeInOutQuad(currentTime, start, change, duration);
+      window.scrollTo(0, val);
+    }
+
     if (currentTime < duration) {
       window.setTimeout(animateScroll, increment);
     }
