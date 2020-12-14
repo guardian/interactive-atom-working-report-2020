@@ -1,7 +1,7 @@
 createSupport();
 
 function createSupport() {
-  const sectionEl = document.querySelector('.working-report__section:nth-of-type(2)');
+  const sectionEl = document.querySelector('.working-report__section');
   const sectionInnerEl = sectionEl.querySelector('.working-report__section__inner');
 
   let supportEl = document.createElement('div');
