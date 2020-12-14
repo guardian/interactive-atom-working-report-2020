@@ -52,7 +52,7 @@ function setNavEvents() {
       navRoot.classList.remove('expanded');
       let sClass = s.dataset.sectionClass;
       let sWrapper = document.querySelector('.working-report__section.' + sClass);
-      let sWrapperTop = sWrapper.offsetTop + 24;
+      let sWrapperTop = sWrapper.offsetTop;
       scrollTo(sWrapperTop);
     })
   });
