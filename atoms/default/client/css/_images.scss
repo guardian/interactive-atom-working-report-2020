@@ -35,6 +35,9 @@ figure.element-image {
 
   &.element--immersive {
     margin: 0;
+    figcaption {
+      display: none;
+    }
   }
 
   // App stuff
