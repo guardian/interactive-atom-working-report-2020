@@ -1,4 +1,10 @@
 .working-report__section__inner .support-the-guardian {
+
+  body.ios &,
+  body.android & {
+    display: none;
+  }
+
   border-top: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
   font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Text Egyptian Web",Georgia,serif;

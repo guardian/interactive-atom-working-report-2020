@@ -45,6 +45,14 @@ function setNavEvents() {
     setNavState(navRoot);
   });
 
+
+  let navTargetAdjustment = 0;
+  if (isApp()) {
+    navTargetAdjustment = -40;
+  } else {
+    navTargetAdjustment = 20;
+  }
+
   // Scroll there on clicks
   let navSections = document.querySelectorAll('.working-report__nav__section');
   navSections.forEach(function (s) {
@@ -52,7 +60,7 @@ function setNavEvents() {
       navRoot.classList.remove('expanded');
       let sClass = s.dataset.sectionClass;
       let sWrapper = document.querySelector('.working-report__section.' + sClass);
-      let sWrapperTop = sWrapper.offsetTop + 20;
+      let sWrapperTop = sWrapper.offsetTop + navTargetAdjustment;
       console.log('will scroll to', sWrapperTop);
       scrollTo(sWrapperTop);
     })
@@ -63,6 +71,10 @@ function setNavEvents() {
   navToggleEl.addEventListener('click', () => {
     navRoot.classList.toggle('expanded');
   })
+}
+
+function isApp() {
+  return (document.body.classList.contains('ios') || document.body.classList.contains('android'));
 }
 
 function highlightCurrentSection(navRoot) {

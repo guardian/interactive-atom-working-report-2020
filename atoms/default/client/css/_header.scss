@@ -64,6 +64,7 @@
     }
 
     h1 {
+      margin: 0;
       font-family: "Guardian Titlepiece","Guardian Headline Full","Guardian Headline","Guardian Egyptian Web",Georgia,serif;
       font-size: 54px;
       line-height: 1;
@@ -92,6 +93,10 @@
       display: block;
       margin-left: 1.12em;
       margin-top: -0.08em;
+      .ios &,
+      .android & {
+        margin-top: -0.18em;
+      }
     }
 
   }
@@ -136,6 +141,7 @@
         line-height: 23px;
         font-weight: 200;
         max-width: 620px;
+        margin: 0 0 18px;
         @include mq(leftCol) {
           font-size: 22px;
           line-height: 25px;
@@ -152,6 +158,10 @@
         justify-content: space-between;
         position: relative;
         margin-top: 40px;
+        .ios &,
+        .android & {
+          display: none;
+        }
 
         .compact {
           display: none;
@@ -187,10 +197,6 @@
 
         .meta__social {
           display: block;
-          .ios &,
-          .android & {
-            display: none;
-          }
         }
 
 
