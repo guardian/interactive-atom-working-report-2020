@@ -54,8 +54,8 @@ p.embed {
   &.supporter-quote {
     color: #041F4A;
     font-style: italic;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 22px;
+    line-height: 28px;
     font-weight: 200;
     padding-top: 24px;
     padding-bottom: 28px;
@@ -63,9 +63,11 @@ p.embed {
     border-bottom: 1px solid #EACCA0;
 
     @include mq(tablet) {
-      font-size: 24px;
-      line-height: 32px;
-      padding-right: 100px;
+      &:not(.can-float) {
+        font-size: 24px;
+        line-height: 32px;
+        padding-right: 100px;
+      }
     }
     &:before,
     &:after {
@@ -95,22 +97,33 @@ p.embed {
       color: #E05E00;
       -webkit-font-smoothing: antialiased;
       margin-left: 58px;
-      font-size: 20px;
-      line-height: 24px;
-      @include mq(tablet) {
-        font-size: 24px;
-        line-height: 28px;
-        margin-left: 88px;
+      font-size: 22px;
+      line-height: 28px;
+    }
+    @include mq(tablet) {
+      &:not(.can-float) {
+        strong,
+        em {
+          font-size: 24px;
+          line-height: 28px;
+          margin-left: 88px;
+        }
       }
     }
+
     strong {
       margin-top: 0.5em;
       font-style: normal;
       font-weight: 700;
-      @include mq(tablet) {
-        margin-top: 0.85em;
+    }
+    @include mq(tablet) {
+      &:not(.can-float) {
+        strong {
+          margin-top: 0.85em;
+        }
       }
     }
+
     em {
       font-style: italic;
       font-weight: 200;
@@ -124,14 +137,16 @@ p.embed {
         height: 50px;
         background-image: url(https://uploads.guim.co.uk/2020/12/11/Globe@2x.png);
         background-size: 100% auto;
-        @include mq(tablet) {
-          bottom: 16px;
-          width: 76px;
-          height: 75px;
-        }
       }
     }
-  }
+    @include mq(tablet) {
+      &:not(.can-float) em:before {
+        bottom: 16px;
+        width: 76px;
+        height: 75px;
+      }
+    }
+}
 
   @include mq(tablet) {
     margin: 18px 0 24px -10px;
