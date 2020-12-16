@@ -34,6 +34,7 @@
     }
   }
 
+
   .wr-video {
     &__overlay {
       position: relative;
@@ -66,6 +67,9 @@
         font-weight: 700;
       }
 
+      a {
+        display: none;
+      }
     }
     &__play {
       width: 44px;
@@ -109,6 +113,33 @@
       font-size: 17px;
       margin-left: -2px;
       font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    }
+  }
+
+  .element__inner {
+    // App
+    iframe {
+      display: none;
+    }
+    .wr-video__overlay {
+      pointer-events: default;
+      a {
+        display: block;
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &,
+        &:hover {
+          color: transparent;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          text-decoration: none;
+        }
+      }
     }
   }
 
