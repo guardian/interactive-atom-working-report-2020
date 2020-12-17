@@ -123,6 +123,9 @@ p.embed {
         }
       }
     }
+    strong:blank {
+      border: 1px solid tomato;
+    }
 
     em {
       font-style: italic;
@@ -138,6 +141,21 @@ p.embed {
         background-image: url(https://uploads.guim.co.uk/2020/12/11/Globe@2x.png);
         background-size: 100% auto;
       }
+      &[data-location='Melrose-Scotland']:before {
+        // opacity: 0.2;
+      }
+      &[data-location='Massachusetts-US']:before {
+        // opacity: 0.2;
+      }
+      &[data-location='X-US']:before {
+        // opacity: 0.2;
+      }
+      &[data-location='Northern-Ireland']:before {
+        // opacity: 0.2;
+      }
+      &[data-location='X-Australia']:before {
+        opacity: 0.2;
+      }
     }
     @include mq(tablet) {
       &:not(.can-float) em:before {
@@ -146,6 +164,7 @@ p.embed {
         height: 75px;
       }
     }
+
 }
 
   @include mq(tablet) {

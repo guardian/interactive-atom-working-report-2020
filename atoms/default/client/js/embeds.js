@@ -39,6 +39,16 @@ function makeSupporterQuoteEl(el) {
 
   name.innerHTML = name.innerHTML.split(',').join('');
 
+  const locArray = loc.innerText.trim().split(',').join('').split(' ');
+  let locationLabel;
+  if (locArray.length >= 2) {
+    locationLabel = `${locArray[locArray.length - 2]}-${locArray[locArray.length - 1]}`;
+  }
+
+  if (locationLabel) {
+    loc.dataset.location = locationLabel;
+  }
+
 }
 
 function checkFloat(el) {
