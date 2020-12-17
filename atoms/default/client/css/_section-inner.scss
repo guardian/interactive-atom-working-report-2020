@@ -84,6 +84,15 @@
           width: 630px;
         }
       }
+
+
     }
+
+    .element--showcase + h2 {
+      @include mq(leftCol) {
+        margin-top: -8px;
+      }
+    }
+
   }
 }
