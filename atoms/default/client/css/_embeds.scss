@@ -142,22 +142,25 @@ p.embed {
         background-size: 100% auto;
       }
       &[data-location='Melrose-Scotland']:before {
-        // opacity: 0.2;
+        background-image: url(https://uploads.guim.co.uk/2020/12/18/Globe-Melrose-Scotland.png);
       }
       &[data-location='Massachusetts-US']:before {
-        // opacity: 0.2;
+        background-image: url(https://uploads.guim.co.uk/2020/12/18/Globe-Massachusetts-US.png);
       }
-      &[data-location='X-US']:before {
-        // opacity: 0.2;
+      &[data-location='Indiana-US']:before {
+        background-image: url(https://uploads.guim.co.uk/2020/12/18/Globe-Indiana-US.png);
       }
       &[data-location='Northern-Ireland']:before {
-        // opacity: 0.2;
+        background-image: url(https://uploads.guim.co.uk/2020/12/18/Globe-Northern-Ireland.png);
       }
-      &[data-location='X-Australia']:before {
-        opacity: 0.2;
+      &[data-location='Victoria-Australia']:before {
+        background-image: url(https://uploads.guim.co.uk/2020/12/18/Globe-Victoria-Australia.png);
       }
     }
     @include mq(tablet) {
+      em:before {
+        bottom: 28px;
+      }
       &:not(.can-float) em:before {
         bottom: 16px;
         width: 76px;

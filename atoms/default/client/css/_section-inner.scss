@@ -61,7 +61,7 @@
       font-weight: 700;
       @include mq(tablet) {
         position: relative;
-        margin: 32px 0 18px;
+        margin: 40px 0 18px;
         &:before {
           content: '';
           display: block;
