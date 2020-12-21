@@ -17,3 +17,6 @@ function setupVideo() {
 
 
 }
+
+// App link notes, if needed
+// x-gu://item/mobile-preview.guardianapis.com/uk/items/world/video/2020/dec/21/how-the-guardian-covered-2020-the-year-that-changed-the-world
